@@ -18,7 +18,7 @@ jobs:
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-          upstream_repository: vikiboss/60s  # <-- 修改这里，例如: google/googletest
-          upstream_branch: main                # <-- 修改这里，上游的主分支名
-          target_branch: main                  # <-- 修改这里，你的主分支名
+          upstream_sync_repo: vikiboss/60s        # 注意：这里改成了 upstream_sync_repo
+          upstream_sync_branch: main            # 注意：这里改成了 upstream_sync_branch
+          target_sync_branch: main              # 注意：这里改成了 target_sync_branch
           test_mode: false
