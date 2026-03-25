@@ -2,8 +2,8 @@ name: Scheduled Sync Upstream
 
 on:
   schedule:
-    - cron: '0 0 * * *' # 每天北京时间早上 8 点运行 (UTC 0:00)
-  workflow_dispatch:   # 允许手动点击按钮触发同步
+    - cron: '0 21 * * *' # 北京时间凌晨 5 点 (UTC 21:00)
+  workflow_dispatch:   # 允许你随时手动点击按钮测试
 
 jobs:
   sync:
@@ -18,7 +18,7 @@ jobs:
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
         with:
           target_repo_token: ${{ secrets.GITHUB_TOKEN }}
-          # 修改后的正确参数名如下：
+          # 注意：以下三个参数名已经更新，请务必保持一致
           upstream_sync_repo: vikiboss/60s
           upstream_sync_branch: main
           target_sync_branch: main
